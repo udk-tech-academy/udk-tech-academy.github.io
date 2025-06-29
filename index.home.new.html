@@ -1,0 +1,117 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: arial;
+            padding: 20px;
+        }
+
+        button{
+            width: 150px;
+            height: 70px;
+            padding: 10px 15px;
+            margin-right: 10px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            
+           
+
+        }
+        button:hover{
+            background-color: #2890b8;
+        }
+        .items{
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item{
+            padding: 1px;
+            background-color: #f1f1f1;
+            border:1px solid #ccc;
+            text-align:center;
+            border-radius: 5px;
+        }
+
+        .container{
+            width: 70%;
+            margin-inline: auto;
+        }
+        img{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    <h2 style="text-align: center;">fillter by categories</h2>
+
+    <div class="buttons"style="display:flex;margin-bottom:1rem;gap:2rem;justify-content:center;
+    align-items:center">
+        <button onclick="filterItems('all')">All</button>
+        <button onclick="filterItems('Front-end')">Front-end</button>
+        <button onclick="filterItems('Back-end')">Back-end</button>
+        <button onclick="filterItems('Fullstack')">Fullstack</button>
+        <button onclick="filterItems('Design')">Design</button>
+        
+    </div>
+
+    <div class="items">
+        <article>
+        <div class="item Fullstack"> <img src="assect/post2.png"width="150"><p>dasac logo is my school</p></div>
+        </article>
+        <article>
+        <div class="item Front-end"> <img src="assect/dasac.jpg"width="150"><p>dasac logo is my school</p></div>
+       </article>
+       <article>
+        <div class="item Back-end"> <img src="assect/POST1.png"width="150"><p>dasac logo is my school</p></div>
+    </article>
+    <article>
+        <div class="item Front-end"> <img src="assect/dasac.jpg"width="150"><p>dasac logo is my school</p></div>
+    </article>
+    <article>
+        <div class="item Front-end"><img src="assect/dasac.jpg"width="150"><p>dasac logo is my school</p></div>
+    </article>
+    <article>
+        <div class="item Design"> <img src="assect/POST1.png"width="150"><p>dasac logo is my school</p></div>
+    </article>
+    <article>
+        <div class="item Fullstack"><img src="assect/post2.png"width="150"><p>dasac logo is my school</p></div>
+    </article>
+       
+    </div>
+</div>
+
+    <script>
+        function filterItems(category){
+            const items = document.querySelectorAll('.item')
+            items.forEach(item =>{
+                if(category==='all'){
+                    item.style.display ='block';
+                    
+                }
+                else{
+                    item.style.display = item.classList.contains(category)?
+                    'block':'none';
+                }
+            });
+
+        }
+    </script>
+</body>
+</html>
+
