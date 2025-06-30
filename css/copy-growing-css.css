@@ -1,0 +1,78 @@
+
+
+
+*{
+    padding: o;
+    margin: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    background: hsl(0, 0%, 29%);
+}
+
+.card{
+    margin: 0 auto;
+    padding: 2em;
+    width: 200px;
+    height: 100px;
+    background: #1c1f2b;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    color: white;
+    text-align: center;
+
+
+
+}
+
+.skills-rap{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1rem;
+}
+
+@property --angle{
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.card::after, .card::before{
+   content: ""; 
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   top: 50%;
+   left: 50%;
+   translate: -50% -50%;
+   background-image: conic-gradient(from var(--angle),transparent 70%,blue,DEEPPINK,WHITE);
+   z-index: 41;
+   border-radius:10px;
+   padding: 3px;
+   animation: 3s spin linear infinite ;
+
+
+
+}
+
+@keyframes spin {
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle:360deg;
+    }
+    
+}
+
+.card::before{
+    filter: blur(0.5rem);
+    opacity: 0.5;
+
+}
